@@ -65,3 +65,4 @@ C:\Users\FrankLindvik\Documents\Repos\Signicat\expenseTracker\Backend\Signicat-B
 C:\Users\FrankLindvik\Documents\Repos\Signicat\expenseTracker\Backend\Signicat-Backend\Signicat-Backend\obj\Debug\net8.0\Signicat-Backend.pdb
 C:\Users\FrankLindvik\Documents\Repos\Signicat\expenseTracker\Backend\Signicat-Backend\Signicat-Backend\obj\Debug\net8.0\Signicat-Backend.genruntimeconfig.cache
 C:\Users\FrankLindvik\Documents\Repos\Signicat\expenseTracker\Backend\Signicat-Backend\Signicat-Backend\obj\Debug\net8.0\ref\Signicat-Backend.dll
+C:\Users\FrankLindvik\Documents\Repos\Signicat\expenseTracker\Backend\Signicat-Backend\Signicat-Backend\obj\Debug\net8.0\Signicat-Backend.sourcelink.json
