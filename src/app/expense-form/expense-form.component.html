@@ -1,0 +1,35 @@
+<h2>Expenses Form</h2>
+
+<button> </button>
+
+<div class="table-responsive small">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
+        <th scope="col">Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of expenses">
+        <td>{{ expense.id }}</td>
+        <td>{{ expense.description }}</td>
+        <td>{{ expense.amount }}</td>
+        <td>{{ expense.date | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ expense.category }}</td>
+        <td>
+          <button (click)="deleteExpense(expense.id)">Delete</button>
+          <button (click)="editExpense(expense)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+     <!-- <button (click)="addExpense({ id: expenses.length + 1,
+      description: 'New Expense', amount: 100, date: new Date(),
+      category: 'Miscellaneous' })">
+      Add Expense
+    </button> -->
+</div>

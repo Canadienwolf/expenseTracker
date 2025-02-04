@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://localhost:42960/expense",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "7j9zsgK3NvM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\FrankLindvik\\Documents\\Repos\\Signicat\\expenseTracker\\Backend\\Signicat-Backend\\Signicat-Backend\\Signicat-Backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\FrankLindvik\\AppData\\Roaming\\NuGet\\a\\microsoft.aspnetcore.openapi\\8.0.5\\microsoft.aspnetcore.openapi.8.0.5.nupkg.sha512",
+    "C:\\Users\\FrankLindvik\\AppData\\Roaming\\NuGet\\a\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\FrankLindvik\\AppData\\Roaming\\NuGet\\a\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\FrankLindvik\\AppData\\Roaming\\NuGet\\a\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\FrankLindvik\\AppData\\Roaming\\NuGet\\a\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\FrankLindvik\\AppData\\Roaming\\NuGet\\a\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\FrankLindvik\\AppData\\Roaming\\NuGet\\a\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

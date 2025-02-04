@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eRjmqYyTmvdyKqn2oUt7l/vtLI4KMJNZGMYkkGgNNfM=",
+  "Source": "Signicat-Backend",
+  "BasePath": "_content/Signicat-Backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
