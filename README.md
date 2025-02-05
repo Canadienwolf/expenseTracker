@@ -2,57 +2,33 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
 
-## Development server
+## Backend
+To start the backend one has to do the following.
 
-To start a local development server, run:
+!important The terminal has to be located in:
+Backend/Signicat-Backend/Signicat-Backend
 
-```bash
-ng serve
-```
+Then run:
+dotnet run --launch-profile "https"
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Frontend
 
-## Code scaffolding
+To start the frontend application one can run the following in the project folder:
+(Signicat\expenseTracker)
+npm run start
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Design choices
+- Added pie char on the Home menu as it becomes quick for the user to see what expenses on has had.
+- On the pie chart one i able to remove expenses one does not want to see by clicking on the category on the bottom.
+- Mad the navigation menu a bar on the left side that is always visible for ease of access for the users. This will change into a expandable hamburger menu when one is on a smaller screen. If i had more time i would have changed the sidebar to be stickiet to make sure that it would follow as the user was scrolling vertically.
+- To make it easier for the user to understand which line is being deleted or edited, i have added the buttons on the expense line. If given more time i would have tested the possibility of clicking on the line and then get a dlg which asks whether one wants to delete of Update.
+- Have added "Add expense" on top above the expense tab. In the future i would have changed tihs to a round button with "+" on the right side of the "Expenses" with a tooltip that says "Add expense". I Would also have changed the "+" button to be either on the right side of middle of the screen on a phone.
+- When clicking on the form tabs, one can sort depend on which one is chosen. Here i would also have added a sort icon to make it easier for the user to understand what they are for and try to make it easier to see that its a clickable button to make changes.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Challenges faced
+- There was issues with making Angular 19 workin toghether with Bootstrap as bootstrap has been updated to support the newest version of Angular yet. There was also an issue with finding good documentation when it came to using bootstrap for angular.
+- Had issues with getting the ng-bootstrap components to work in Angular out of the box without tweaking them, some more and some less.
+-  There was issue with installing bootstrap using Angular CLI and Node.js both as i was using version 16 of angular the first time and then had to delete the project and upgrade angular to 19 and then creating the project again and importing the dependencies again.
 
 ## Additional Resources
 
