@@ -1,50 +1,53 @@
-<h3>Expenses</h3>
-
-<button class="btn btn-primary" (click)="openExpenseDlg()" > Add expense </button>
-
+<h3 id="expensesHeading">Expenses</h3>
+<button class="btn btn-primary" (click)="openExpenseDlg()" aria-label="Add expense">Add expense</button>
 <div class="table-responsive small">
-  <table class="table table-striped table-sm">
+  <table class="table table-striped table-sm" aria-labelledby="expensesHeading">
     <thead>
       <tr>
-        <th scope="col" (click)="sortTable('id')" style="cursor: pointer;">
-          <div class="d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16">
+        <!-- Sortable header for ID -->
+        <th scope="col">
+          <button class="btn btn-link p-0 d-flex align-items-center" (click)="sortTable('id')" aria-label="Sort by ID">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
             </svg>
             <span>#</span>
-          </div>
+          </button>
         </th>
-        <th scope="col" (click)="sortTable('description')" style="cursor: pointer;">
-          <div class="d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16">
+        <!-- Sortable header for Product/Description -->
+        <th scope="col">
+          <button class="btn btn-link p-0 d-flex align-items-center" (click)="sortTable('description')" aria-label="Sort by product">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
             </svg>
-            <span>product</span>
-          </div>
+            <span>Product</span>
+          </button>
         </th>
-        <th scope="col" (click)="sortTable('amount')" style="cursor: pointer;">
-          <div class="d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16">
+        <!-- Sortable header for Price/Amount -->
+        <th scope="col">
+          <button class="btn btn-link p-0 d-flex align-items-center" (click)="sortTable('amount')" aria-label="Sort by price">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
             </svg>
             <span>Price</span>
-          </div>
+          </button>
         </th>
-        <th scope="col" (click)="sortTable('date')" style="cursor: pointer;">
-          <div class="d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16">
+        <!-- Sortable header for Date -->
+        <th scope="col">
+          <button class="btn btn-link p-0 d-flex align-items-center" (click)="sortTable('date')" aria-label="Sort by date">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
             </svg>
             <span>Date</span>
-          </div>
+          </button>
         </th>
-        <th scope="col" (click)="sortTable('category')" style="cursor: pointer;">
-          <div class="d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16">
+        <!-- Sortable header for Category -->
+        <th scope="col">
+          <button class="btn btn-link p-0 d-flex align-items-center" (click)="sortTable('category')" aria-label="Sort by category">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter d-none d-md-block me-2" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
             </svg>
             <span>Category</span>
-          </div>
+          </button>
         </th>
       </tr>
     </thead>
@@ -56,18 +59,26 @@
         <td>{{ expense.date | date: 'dd/MM/yyyy' }}</td>
         <td>{{ expense.category }}</td>
         <td>
-
-          <button class="btn btn-danger btn-sm me-1" (click)="deleteExpense(expense.id)" >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+          <button class="btn btn-danger btn-sm me-1" (click)="deleteExpense(expense.id)" aria-label="Delete Expense" title="Delete Expense">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
             </svg>
-            Delete
+            <span class="visually-hidden">Delete Expense</span>
           </button>
-          <button class="btn btn-outline-primary btn-sm" (click)="editExpense(expense)" > Update </button>
-
-          <!-- <button class="btn-outline-primary" (click)="deleteExpense(expense.id)">Delete</button> -->
-          <!-- <button (click)="editExpense(expense)">Update</button> -->
+          <button class="btn btn-outline-primary btn-sm"
+                  (click)="editExpense(expense)"
+                  aria-label="Update Expense"
+                  title="Update Expense">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16"
+                    fill="currentColor"
+                    class="bi bi-three-dots"
+                    viewBox="0 0 16 16">
+                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+                  </svg>
+            <span class="visually-hidden">Update Expense</span>
+          </button>
         </td>
       </tr>
     </tbody>
@@ -75,4 +86,3 @@
 </div>
 
 
-<!-- class="btn btn-primary" -->

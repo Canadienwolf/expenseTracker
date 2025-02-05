@@ -17,8 +17,6 @@ import { AddExpenseDlgComponent } from '../add-expense-dlg/add-expense-dlg.compo
 
 export class ExpenseFormComponent {
   expenses: Expense[] = [];
-
-    // Sorting variables
     sortColumn = '';
     sortDirection: 'asc' | 'desc' = 'asc';
 

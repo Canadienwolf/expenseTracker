@@ -23,7 +23,7 @@ export class ExpenseMainPageComponent {
   constructor(private expenseService: ExpenseService) {}
 
   ngOnInit(): void {
-    // Get expenses and then create pie chart
+    // Get expenses and then create a pie chart
     this.expenseService.getExpenses().subscribe((data: Expense[]) => {
       this.expenses = data;
       this.createPieChart();

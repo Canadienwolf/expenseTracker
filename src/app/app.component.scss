@@ -1,23 +1,6 @@
-// Have used grid to split up the page into two columns to display the sidebar and the main content
 .content{
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 15rem auto;
   }
 }
-
-// .sidebar {
-//   width: 5rem;
-//   // Have added a width to the sidebar to make sure that the button shows properly, and the sidebar is not too wide.
-// }
-
-// @media (min-width: 768px) {
-//   .sidebar .offcanvas-lg {
-//     position: -webkit-sticky;
-//     position: sticky;
-//     top: 48px;
-//   }
-//   .navbar-search {
-//     display: block;
-//   }
-// }
