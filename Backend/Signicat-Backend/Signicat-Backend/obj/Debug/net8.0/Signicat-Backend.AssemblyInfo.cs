@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Signicat-Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85b838747eff801c9bb368f1badbf7a805b7c694")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+835f7a05ddaaf0e218321cbb70eb3573c2205210")]
 [assembly: System.Reflection.AssemblyProductAttribute("Signicat-Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Signicat-Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
