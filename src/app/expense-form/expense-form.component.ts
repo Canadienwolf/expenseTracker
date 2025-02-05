@@ -1,19 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExpenseService } from '../service/expense.service';
-import { Expense } from '../../../Backend/mock-data';
-
-// import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-// import { AddExpenseDlgComponent } from '../add-expense-dlg/add-expense-dlg.component';
+import { Expense } from '../expense';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddExpenseDlgComponent } from '../add-expense-dlg/add-expense-dlg.component';
 
 @Component({
   selector: 'app-expense-form',
+  standalone: true,
   imports: [
     CommonModule,
-    // MatDialogModule
-
-
-
   ],
   templateUrl: './expense-form.component.html',
   styleUrl: './expense-form.component.scss'
@@ -28,8 +24,7 @@ export class ExpenseFormComponent {
 
   constructor(
     private expenseService: ExpenseService,
-    // private dialog: MatDialog
-
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -68,17 +63,19 @@ export class ExpenseFormComponent {
     });
   }
 
-  // openAddExpenseDialog(): void {
-  //   const dialogRef = this.dialog.open(AddExpenseDlgComponent);
-  //   dialogRef.afterClosed().subscribe((result: Expense) => {
-  //     if (result) {
-  //       this.addExpense(result);
-  //     }
-  //   });
-  // }
+  openExpenseDlg() {
+    const modalRef = this.modalService.open(AddExpenseDlgComponent);
+    modalRef.closed.subscribe((result: Expense) => {
+      if (result) {
+        this.addExpense(result);
+      }
+    });
+  }
 
   addExpense(expense: Expense) {
-    this.expenses.push(expense);
+    this.expenseService.addExpense(expense).subscribe((data: Expense) => {
+      this.expenses.push(data);
+    });
   }
 
   deleteExpense(id: number): void {
@@ -88,9 +85,21 @@ export class ExpenseFormComponent {
   }
 
   editExpense(editExpense: Expense): void {
-    const index = this.expenses.findIndex(expense => expense.id === editExpense.id);
-    if (index !== -1) {
-      this.expenses[index] = editExpense;
-    }
+    const expense = { ...editExpense };
+    const modalRef = this.modalService.open(AddExpenseDlgComponent);
+    modalRef.componentInstance.expenses = expense;
+    modalRef.closed.subscribe((result: Expense) => {
+      if (result) {
+        const index = this.expenses.findIndex(expense => expense.id === editExpense.id);
+        this.expenseService.editExpense(result).subscribe(() => {
+          if (index !== -1) {
+            this.expenses[index] = result;
+         }
+        });
+      }
+    });
+
+
+
   }
 }

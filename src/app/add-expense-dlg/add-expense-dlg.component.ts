@@ -1,32 +1,29 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Expense } from '../../../Backend/mock-data';
+import { Expense } from '../expense';
+import { NgbActiveModal, NgbModal  } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-expense-dlg',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './add-expense-dlg.component.html',
   styleUrl: './add-expense-dlg.component.scss'
 })
 
-
 export class AddExpenseDlgComponent {
-  expenses: Expense[] = [];
+  expenses: Expense = {id: 0, amount: 0, date: new Date(), category:'', description: ''};
+  activeModal = inject(NgbActiveModal);
 
   constructor(
-    public dialogRef: MatDialogRef<AddExpenseDlgComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Expense
   ) {}
 
-  onCancel(): void {
-    this.dialogRef.close();
+  onSave(): void {
+    this.activeModal.close(this.expenses);
   }
 
-  onSave(): void {
-    // Pass the expense data back when dialog closes
-    this.dialogRef.close(this.expenses);
+  setDate(event: Event): void {
+    this.expenses.date = new Date((event.target as HTMLInputElement).value);
   }
 }

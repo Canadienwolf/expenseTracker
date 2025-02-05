@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Expense } from '../../../Backend/mock-data';
+import { Expense } from '../expense';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +28,6 @@ export class ExpenseService {
   }
 
   editExpense(editExpense: Expense): Observable<Expense> {
-    return this.http.put<Expense>(`${this.apiUrl}/${editExpense.id}`, editExpense);
+    return this.http.patch<Expense>(`${this.apiUrl}/${editExpense.id}`, editExpense);
   }
 }

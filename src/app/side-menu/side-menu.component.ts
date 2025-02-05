@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
     RouterLink
 ],
   templateUrl: './side-menu.component.html',
-  styleUrl: './side-menu.component.scss'
+  styleUrls: ['./side-menu.component.scss']
 })
 export class SideMenuComponent {
   constructor() { }

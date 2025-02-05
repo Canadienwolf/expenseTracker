@@ -86,7 +86,9 @@ app.MapGet("/expense", () => mockExpenses)
 
 app.MapPost("/expense", (Expense expense) =>
   {
+    expense.Id = mockExpenses.Max(e => e.Id) + 1;
     mockExpenses.Add(expense);
+    return expense;
   })
   .WithName("AddExpense")
   .WithOpenApi();
@@ -96,13 +98,8 @@ app.MapPatch("/expense/{id}", (int id, Expense expense) =>
   var existingExpense = mockExpenses.FirstOrDefault(e => e.Id == id);
   if (existingExpense != null)
   {
-    var updatedExpense = existingExpense with
-    {
-      Description = expense.Description,
-      Amount = expense.Amount,
-      Date = expense.Date,
-      Category = expense.Category
-    };
+    var updatedExpense = new Expense ( id, expense.Description, expense.Amount, expense.Date, expense.Category);
+
     mockExpenses[mockExpenses.IndexOf(existingExpense)] = updatedExpense;
   }
 });
@@ -120,5 +117,3 @@ app.MapDelete("/expense/{id}", (int id) =>
 
 
 app.Run();
-
-public record Expense(int Id, string Description, double Amount, DateTime Date, string Category);

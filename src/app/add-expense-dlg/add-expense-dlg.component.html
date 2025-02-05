@@ -1,17 +1,37 @@
-<h2 mat-dialog-title>Add Expense</h2>
-<mat-dialog-content>
-  <form>
-    <!-- <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Description</mat-label>
-      <input matInput [(ngModel)]="expense.description" name="description" />
-    </mat-form-field>
-    <mat-form-field appearance="fill" style="width: 100%;">
-      <mat-label>Amount</mat-label>
-      <input matInput type="number" [(ngModel)]="expenses" />
-    </mat-form-field> -->
+<div class="modal-header">
+  <h4 class="modal-title">Add expense</h4>
+</div>
+<div class="modal-body">
+  <form #expenseForm="ngForm">
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description"
+      [(ngModel)]="expenses.description" name="description" required/>
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="number" class="form-control" id="amount"
+      required min="0"
+        onkeypress="return event.charCode >= 48"
+      [(ngModel)]="expenses.amount" name="amount" />
+    </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" class="form-control" id="date"
+      [value]="expenses.date | date:'yyyy-MM-dd'"
+      (change)="setDate($event)"
+       name="date" required />
+    </div>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input type="text" class="form-control" id="category"
+      [(ngModel)]="expenses.category" name="category" required />
+    </div>
   </form>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button (click)="onCancel()">Cancel</button>
-  <button mat-button color="primary" (click)="onSave()">Save</button>
-</mat-dialog-actions>
+</div>
+<div class="modal-footer">
+  <button *ngIf="expenseForm.valid" type="button" class="btn btn-outline-primary"
+  (click)="onSave()">Save</button>
+  <button type="button" class="btn btn-outline-secondary"
+  (click)="activeModal.close()">Cancel</button>
+</div>

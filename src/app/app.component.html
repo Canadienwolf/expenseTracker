@@ -1,18 +1,18 @@
-<app-header></app-header>
-
-<div class="content">
-  <app-side-menu ></app-side-menu>
-
-  <div class="p-4">
-    <router-outlet></router-outlet>
-  </div>
-</div>
-
-
 <!--
   Added app-side-menu as i will be reusing it throughout the whole application
   and always want it to be visible to the user.
  -->
 
+<app-header></app-header>
+
+<div class="content">
+    <div class="d-md-block">
+      <app-side-menu class="offcanvas-md offcanvas-end"></app-side-menu>
+    </div>
+
+  <div class="p-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
  <!-- <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark"> -->

@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExpenseService } from '../service/expense.service';
-import { Expense } from '../../../Backend/mock-data';
+import { Expense } from '../expense';
 import { Chart, ChartConfiguration, registerables } from 'chart.js';
 
 
@@ -28,10 +28,6 @@ export class ExpenseMainPageComponent {
       this.expenses = data;
       this.createPieChart();
     });
-  }
-
-  ngAfterViewInit(): void {
-    // Chart creation moved inside subscription after data loaded.
   }
 
   // Aggregate expenses by category
