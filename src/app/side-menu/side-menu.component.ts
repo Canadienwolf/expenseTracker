@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
-  imports: [
-    RouterLink
-],
+  imports: [],
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.scss']
 })
