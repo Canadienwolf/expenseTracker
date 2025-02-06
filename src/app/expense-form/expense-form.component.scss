@@ -1,3 +1,9 @@
 :host {
   width: 100%;
+  color: #000; // Default text color (adjust as needed)
+  background-color: #ff0000; // Default background color (adjust as needed)'
+}
+
+:host-context(.dark-theme) {
+  color: var(--text-color); // Uses dark theme text color from your global variables
 }

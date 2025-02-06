@@ -17,8 +17,13 @@ https://localhost:44331/swagger/index.html
 Then run:
 dotnet run --launch-profile "http"
 
+## Note
+- Depending on which version of SDK you have, you might have to change the version i global.json in the backend. I have tested that version 8 and version 9 works.
+
 ## Frontend
 Open the project using IDE of your choice.
+
+Before being able to start the application, npm i has to be run to install node_modules.
 
 To start the frontend application, navigate to the following folder in the terminal:
 (Signicat\expenseTracker)

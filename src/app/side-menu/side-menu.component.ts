@@ -12,7 +12,15 @@ import { RouterLink } from '@angular/router';
 export class SideMenuComponent {
   constructor() { }
 
-  ngOnInit(): void {
-  }
+darkModeEnabled = false;
 
+  ngOnInit(): void { }
+
+  toggleDarkMode(): void {
+    console.log('toggleDarkMode');
+    document.body.classList.toggle('dark-theme');
+  }
 }
+
+
+
