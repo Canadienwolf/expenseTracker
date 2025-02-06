@@ -15,7 +15,7 @@ Second, one has to accept that this site can run
 https://localhost:44331/swagger/index.html
 
 Then run:
-dotnet run --launch-profile "https"
+dotnet run --launch-profile "http"
 
 ## Frontend
 Open the project using IDE of your choice.
